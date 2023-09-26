@@ -2,12 +2,5 @@
 # random-gardiner - return a random exercise from "Egyptian Grammar"
 
 exercises="eg-ex.txt"
-shuffle="shuf -n 1"
 
-if [ "$#" -ne 0 ]; then # filter the exercises
-	grep "$1" "$exercises" | $shuffle
-else
-	$shuffle "$exercises"
-fi
-
-	
+grep "$1" "$exercises" | shuf -n 1
